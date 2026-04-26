@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://buko5oytng4ny"]
+
+[ext_resource type="Script" uid="uid://c5cvfqrb0lyet" path="res://world_camera.gd" id="1_2dthy"]
+[ext_resource type="Texture2D" uid="uid://bau332doe5a7y" path="res://Assets/tileset/fullTiles.png" id="1_xvcl3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_du1qm"]
+texture = ExtResource("1_xvcl3")
+separation = Vector2i(1, 0)
+texture_region_size = Vector2i(64, 89)
+0:4/0 = 0
+0:3/0 = 0
+3:3/0 = 0
+1:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7i3mf"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_du1qm")
+
+[node name="World" type="Node2D" unique_id=805180012]
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1965701949]
+y_sort_enabled = true
+position = Vector2(-120, -191)
+tile_map_data = PackedByteArray("AAD//wEAAAADAAMAAAAAAAAAAAADAAMAAAD+/wIAAAADAAMAAAABAP//AAADAAMAAAD9/wMAAAADAAMAAAD9/wIAAAADAAMAAAD+/wEAAAAAAAMAAAD//wAAAAADAAMAAAAAAP//AAADAAMAAAD8/wQAAAAAAAMAAAD8/wMAAAAAAAMAAAD7/wMAAAAAAAMAAAD8/wIAAAAAAAMAAAD9/wEAAAADAAMAAAD+/wAAAAADAAMAAAD/////AAAAAAMAAAD///7/AAAAAAMAAAAAAP7/AAADAAMAAAABAP7/AAAAAAMAAAACAP7/AAAAAAMAAAACAP//AAADAAMAAAABAAAAAAADAAMAAAAAAAEAAAADAAMAAAD//wIAAAAAAAMAAAD+/wMAAAAAAAMAAAD9/wQAAAAAAAMAAAD8/wEAAAAAAAMAAAD9/wAAAAAAAAMAAAD+////AAAAAAMAAAAAAP3/AAAAAAMAAAABAP3/AAAAAAMAAAA=")
+tile_set = SubResource("TileSet_7i3mf")
+
+[node name="WorldCamera" type="Camera2D" parent="." unique_id=1548888370]
+position = Vector2(-145, -207)
+script = ExtResource("1_2dthy")
