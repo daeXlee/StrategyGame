@@ -1,0 +1,82 @@
+[gd_scene format=4 uid="uid://buko5oytng4ny"]
+
+[ext_resource type="Script" uid="uid://c5cvfqrb0lyet" path="res://world_camera.gd" id="1_2dthy"]
+[ext_resource type="Script" uid="uid://b3q5pkht2cav" path="res://world.gd" id="1_jeeba"]
+[ext_resource type="Texture2D" uid="uid://6fv3s0fsurbc" path="res://Assets/tileset/hexagonTerrain_sheet.png" id="1_xvcl3"]
+[ext_resource type="Texture2D" uid="uid://kl0ftupiw3pw" path="res://Assets/tileset/highlight.png" id="2_du1qm"]
+[ext_resource type="Texture2D" uid="uid://bay24yvwkqxim" path="res://addons/hexagon_tilemaplayer/demo/tile_horizontal.png" id="4_vr5om"]
+[ext_resource type="Script" uid="uid://bse3h5wjmfots" path="res://tile_map_layer.gd" id="5_vr5om"]
+[ext_resource type="PackedScene" uid="uid://dg8vo75f2qv7m" path="res://player.tscn" id="6_i1fia"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_du1qm"]
+texture = ExtResource("1_xvcl3")
+separation = Vector2i(2, 2)
+texture_region_size = Vector2i(120, 140)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+5:1/0 = 0
+6:4/0 = 0
+4:5/0 = 0
+4:7/0 = 0
+4:8/0 = 0
+3:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7i3mf"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(120, 140)
+sources/1 = SubResource("TileSetAtlasSource_du1qm")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i3mf"]
+texture = ExtResource("2_du1qm")
+texture_region_size = Vector2i(120, 140)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vr5om"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(120, 140)
+sources/0 = SubResource("TileSetAtlasSource_7i3mf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jeeba"]
+texture = ExtResource("4_vr5om")
+texture_region_size = Vector2i(164, 190)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o6o1k"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(154, 178)
+sources/0 = SubResource("TileSetAtlasSource_jeeba")
+
+[node name="World" type="Node2D" unique_id=805180012]
+script = ExtResource("1_jeeba")
+metadata/_edit_group_ = true
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1965701949]
+visible = false
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD6/wIAAQAEAAcAAAD6/wMAAQAEAAcAAAD5/wMAAQAEAAUAAAD5/wIAAQAFAAEAAAD6/wQAAQAFAAEAAAD5/wQAAQAFAAEAAAD4/wQAAQAFAAEAAAD4/wMAAQAGAAQAAAD3/wMAAQAGAAQAAAD3/wQAAQAGAAQAAAD3/wUAAQAFAAEAAAD4/wUAAQAFAAEAAAD4/wYAAQAFAAEAAAD5/wUAAQAFAAEAAAD5/wYAAQAEAAcAAAD7/wQAAQAEAAgAAAD5/wcAAQAEAAgAAAD6/wYAAQAFAAEAAAD6/wUAAQAFAAEAAAD7/wUAAQAFAAEAAAD8/wQAAQAFAAEAAAD7/wMAAQAGAAQAAAD8/wMAAQAGAAQAAAD9/wMAAQAGAAQAAAD+/wIAAQAFAAEAAAD9/wIAAQAFAAEAAAD8/wIAAQAFAAEAAAD7/wIAAQAFAAEAAAD8/wEAAQAFAAEAAAD7/wEAAQAFAAEAAAD6/wEAAQAFAAEAAAD5/wEAAQAFAAEAAAD4/wIAAQAFAAEAAAD//wEAAQAFAAEAAAAAAAAAAQAFAAEAAAABAP//AQAFAAEAAAACAP7/AQAFAAEAAAADAP3/AQAFAAEAAAACAP3/AQAGAAQAAAACAPz/AQAFAAEAAAABAPz/AQAFAAEAAAABAPv/AQAFAAEAAAAAAPz/AQAFAAEAAAAAAPv/AQAGAAQAAAAAAPr/AQAFAAEAAAD///v/AQAFAAEAAAD+//z/AQAFAAEAAAD9//3/AQAFAAEAAAD8//7/AQAFAAEAAAD7////AQAFAAEAAAD6/wAAAQAFAAEAAAD2/wQAAQAFAAEAAAD9/wEAAQAFAAEAAAD+/wEAAQAFAAEAAAD//wAAAQAGAAQAAAAAAP//AQAFAAEAAAD/////AQAFAAEAAAD+/wAAAQAGAAQAAAABAP7/AQAFAAEAAAAAAP7/AQAEAAUAAAABAP3/AQAFAAEAAAAAAP3/AQAEAAgAAAD///7/AQAEAAgAAAD+////AQAFAAEAAAD9/wAAAQAFAAEAAAD9////AQAFAAEAAAD8////AQAEAAgAAAD7/wAAAQAEAAgAAAD8/wAAAQAFAAEAAAD9//7/AQAFAAEAAAD+//7/AQAFAAEAAAD+//3/AQAFAAEAAAD///z/AQAGAAQAAAD///3/AQAFAAEAAAA=")
+tile_set = SubResource("TileSet_7i3mf")
+
+[node name="TileHighlight" type="TileMapLayer" parent="." unique_id=1970620178]
+visible = false
+tile_set = SubResource("TileSet_vr5om")
+
+[node name="WorldCamera" type="Camera2D" parent="." unique_id=1548888370]
+position = Vector2(-178, -226)
+script = ExtResource("1_2dthy")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=523531433]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_o6o1k")
+script = ExtResource("5_vr5om")
+metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
+
+[node name="Player" parent="." unique_id=455405435 instance=ExtResource("6_i1fia")]
+position = Vector2(79, 91)
