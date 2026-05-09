@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5cvfqrb0lyet" path="res://world_camera.gd" id="1_2dthy"]
 [ext_resource type="Script" uid="uid://b3q5pkht2cav" path="res://world.gd" id="1_jeeba"]
-[ext_resource type="Texture2D" uid="uid://bay24yvwkqxim" path="res://addons/hexagon_tilemaplayer/demo/tile_horizontal.png" id="4_vr5om"]
+[ext_resource type="Texture2D" uid="uid://bay24yvwkqxim" path="res://Assets/tileset/tile_horizontal.png" id="4_vr5om"]
 [ext_resource type="Script" uid="uid://bse3h5wjmfots" path="res://tile_map_layer.gd" id="5_vr5om"]
 [ext_resource type="PackedScene" uid="uid://dg8vo75f2qv7m" path="res://player.tscn" id="6_i1fia"]
 
