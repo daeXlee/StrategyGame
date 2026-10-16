@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6fv3s0fsurbc"
-path="res://.godot/imported/hexagonTerrain_sheet.png-b5224d92064af835a701a9b3691f5139.ctex"
+path="res://.godot/imported/hexagonTerrain_sheet.png-7764a7ac5e32bc15484865bf71c242ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tileset/hexagonTerrain_sheet.png"
-dest_files=["res://.godot/imported/hexagonTerrain_sheet.png-b5224d92064af835a701a9b3691f5139.ctex"]
+source_file="res://assets/tileset/hexagonTerrain_sheet.png"
+dest_files=["res://.godot/imported/hexagonTerrain_sheet.png-7764a7ac5e32bc15484865bf71c242ab.ctex"]
 
 [params]
 

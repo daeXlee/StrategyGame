@@ -11,19 +11,37 @@ config_version=5
 [application]
 
 config/name="StrategyGame"
-run/main_scene="uid://buko5oytng4ny"
+run/main_scene="uid://brfcvxs8427ik"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://cjv0novy7xo5m"
+GameManager="*uid://fo6785ajti0h"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/hexagon_tilemaplayer/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "gray",
+"res://core/": "green",
+"res://features/": "red",
+"res://features/hover/": "red",
+"res://features/ui/": "red",
+"res://features/units/": "red",
+"res://features/world/": "red"
+}
 
 [input]
 
@@ -49,4 +67,5 @@ left_click={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://brfcvxs8427ik"]
+
+[ext_resource type="Script" uid="uid://cj7h8kv8da3vw" path="res://features/world/world.gd" id="1_vqgh6"]
+[ext_resource type="Script" uid="uid://cmn08qok6xxjd" path="res://features/world/world_manager.gd" id="2_6evwi"]
+[ext_resource type="Script" uid="uid://bv0kl65yvvvyb" path="res://features/units/unit_manager.gd" id="3_k5gkm"]
+[ext_resource type="TileSet" uid="uid://p5vsqt28076v" path="res://resources/tile_sets/default_hex.tres" id="3_vjnib"]
+[ext_resource type="Script" uid="uid://buj6ft1vvdf2f" path="res://addons/hexagon_tilemaplayer/hexagon_tilemaplayer.gd" id="4_07nrn"]
+[ext_resource type="PackedScene" uid="uid://cvr8jsu8bnce" path="res://features/units/unit.tscn" id="4_ipd0c"]
+[ext_resource type="Script" uid="uid://bs3qteoh60g4k" path="res://core/camera/camera.gd" id="5_07nrn"]
+[ext_resource type="Script" uid="uid://btbggqaicufut" path="res://features/hover/hover_overlay.gd" id="5_ceqlf"]
+[ext_resource type="Texture2D" uid="uid://wvdtoop4pmxd" path="res://assets/tileset/tile_selected.png" id="5_hqx54"]
+[ext_resource type="Script" uid="uid://b2jutnrbqctsp" path="res://features/world/game_tile_map_layer.gd" id="6_k830g"]
+[ext_resource type="PackedScene" uid="uid://cr8mk32ja76hu" path="res://features/ui/turn_panel/turn_panel.tscn" id="8_gb2pg"]
+[ext_resource type="Script" uid="uid://brxc36tebwhw2" path="res://features/units/overlays/unit_range_overlay.gd" id="9_ed0q5"]
+[ext_resource type="Script" uid="uid://cvvtvbj5wkwb8" path="res://features/units/overlays/unit_path_overlay.gd" id="9_pp02f"]
+[ext_resource type="PackedScene" uid="uid://ccfviw63pcwhh" path="res://features/units/ui/unit_hud.tscn" id="14_4dafw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gb2pg"]
+texture = ExtResource("5_hqx54")
+texture_region_size = Vector2i(164, 190)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k5gkm"]
+tile_shape = 3
+tile_layout = 1
+tile_size = Vector2i(164, 190)
+sources/0 = SubResource("TileSetAtlasSource_gb2pg")
+
+[node name="World" type="Node2D" unique_id=310793215]
+script = ExtResource("1_vqgh6")
+
+[node name="WorldManager" type="Node" parent="." unique_id=1752034143]
+script = ExtResource("2_6evwi")
+
+[node name="UnitManager" type="Node" parent="." unique_id=579618627]
+unique_name_in_owner = true
+script = ExtResource("3_k5gkm")
+unit_scene = ExtResource("4_ipd0c")
+
+[node name="TileMaps" type="Node" parent="." unique_id=1595302699]
+
+[node name="GameTileMapLayer" type="TileMapLayer" parent="TileMaps" unique_id=224488844]
+unique_name_in_owner = true
+tile_set = ExtResource("3_vjnib")
+script = ExtResource("6_k830g")
+pathfinding_enabled = true
+debug_mode = 1
+metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
+
+[node name="SelectionTileMapLayer" type="TileMapLayer" parent="TileMaps" unique_id=1782823711]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_k5gkm")
+script = ExtResource("4_07nrn")
+metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
+
+[node name="Overlays" type="Node" parent="." unique_id=1818263066]
+
+[node name="UnitRangeOverlay" type="Node2D" parent="Overlays" unique_id=1646172026]
+script = ExtResource("9_ed0q5")
+
+[node name="UnitPathOverlay" type="Node2D" parent="Overlays" unique_id=1664184622]
+script = ExtResource("9_pp02f")
+
+[node name="HoverOverlay" type="Node2D" parent="Overlays" unique_id=2067070683]
+script = ExtResource("5_ceqlf")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=2039285627]
+position = Vector2(965, 539)
+script = ExtResource("5_07nrn")
+
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=768830352]
+
+[node name="TurnPanel" parent="GameUI" unique_id=1924712935 instance=ExtResource("8_gb2pg")]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -170.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UnitHUD" parent="GameUI" unique_id=586888875 instance=ExtResource("14_4dafw")]
+unique_name_in_owner = true
