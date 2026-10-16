@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cvr8jsu8bnce"]
+
+[ext_resource type="Script" uid="uid://d2si27cm4jnll" path="res://features/units/unit.gd" id="1_ww6wg"]
+[ext_resource type="Texture2D" uid="uid://db3d4sc5e7b00" path="res://icon.svg" id="2_q42ai"]
+
+[node name="Unit" type="Node2D" unique_id=1692766244]
+z_index = 50
+script = ExtResource("1_ww6wg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445937076]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_q42ai")
+
+[node name="SelectionIndicator" type="Node2D" parent="." unique_id=2105400689]
+
+[node name="Line2D" type="Line2D" parent="SelectionIndicator" unique_id=721288542]
+points = PackedVector2Array(48, -48, -48, -48, -48, 48, 48, 48)
+closed = true
+width = 5.0
+default_color = Color(1, 1, 0, 1)

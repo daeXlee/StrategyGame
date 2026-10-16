@@ -1,0 +1,18 @@
+[gd_resource type="TileSet" format=3 uid="uid://p5vsqt28076v"]
+
+[ext_resource type="Texture2D" uid="uid://bay24yvwkqxim" path="res://assets/tileset/tile_horizontal.png" id="1_kw5lq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jj5h"]
+texture = ExtResource("1_kw5lq")
+texture_region_size = Vector2i(164, 190)
+0:0/0 = 0
+0:0/0/modulate = Color(0.061015606, 0.6231213, 0, 1)
+0:0/0/custom_data_0 = 1.0
+
+[resource]
+tile_shape = 3
+tile_layout = 1
+tile_size = Vector2i(164, 190)
+custom_data_layer_0/name = "move_weight"
+custom_data_layer_0/type = 3
+sources/0 = SubResource("TileSetAtlasSource_0jj5h")

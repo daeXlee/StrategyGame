@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cr8mk32ja76hu"]
+
+[ext_resource type="Script" uid="uid://cykds5jer0xrd" path="res://features/ui/turn_panel/turn_panel.gd" id="1_ar8v6"]
+
+[node name="TurnPanel" type="MarginContainer" unique_id=1924712935]
+custom_minimum_size = Vector2(260, 170)
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ar8v6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1482637891]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1025829722]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1755480805]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TurnLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2004115131]
+layout_mode = 2
+text = "Turn X"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=350915918]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NextTurnButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=634659143]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "NEXT TURN"
